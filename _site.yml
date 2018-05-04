@@ -1,9 +1,15 @@
 name: "bhugole"
 navbar: 
-  title: " bhugole b.v"
+  title: "BHUGOLE"
   left:
     - text: "Home"
       href: index.html
+    - text: "Partnerships"
+      href: paterships.html
+    - text: "Software"
+      href: software.html
+    - text: "Training"
+      href: training.html
     - text: "About"
       href: about.html
 output:
