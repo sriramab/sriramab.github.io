@@ -11,6 +11,10 @@ title: "Software"
 
 \
 
+\** Distributed here with permission.
+
+\
+
 
 
 ## **GAMA ** - Agent-based Modeling Software (Free Software)
