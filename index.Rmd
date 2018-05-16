@@ -1,6 +1,46 @@
 ---
-title: " bhugole"
+title: ""
 
 ---
 
-Hello, website!
+\
+\
+\
+
+<center> <font size = 5> We are **_bhu-goal_** </font>. </center> 
+\
+
+<center> <font size = 4> It means _"the science of geography"_ in Sanskrit (an Indian language).</font>  </center>
+
+\
+
+
+
+<p> We at **BHUGOLE** are interested in doing spatial analysis and simulations. In this dimension, our focus is on challenges related to urban planning. These include infrastructure planning, transport planning, urban and regional planning and we largely use a simulation approach to address these challenges. </p>
+
+Our expertise is in:
+
+ - Transport Planning
+ - Traffic Simulation
+ - Spatial Analysis
+ - Pedestrian movements
+ - Tourist Behavior
+ - Agent based modeling
+
+\
+
+We provide training in:
+
+ - Spatial Analysis : ArcGIS, QGIS
+ - Spatial Simulations: GAMA
+ - Agent based modeling: GAMA
+ 
+\
+
+With our partners, we provide services in:
+
+ - Highway Design
+ - Geology
+\
+\
+\
