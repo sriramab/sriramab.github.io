@@ -7,10 +7,10 @@ title: ""
 \
 \
 
-<center> <font size = 5> We are **_bhu-goal_** </font>. </center> 
+<center> <font size = 5> We are Bhugole </font>. </center> 
 \
 
-<center> <font size = 4> It means _"the science of geography"_ in Sanskrit (an Indian language).</font>  </center>
+<center> <font size = 4> Bhugole means _"the science of geography"_ in Sanskrit (an Indian language).</font>  </center>
 
 \
 
