@@ -14,6 +14,8 @@ navbar:
       href: training.html
     - text: "About"
       href: about.html
+    - text: "GAMA"
+      href: http://bhugole.com/gamamanual/
 output:
   html_document:
     theme: cosmo
