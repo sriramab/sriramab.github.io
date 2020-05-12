@@ -7,7 +7,7 @@ title: "Software"
 
 \
 
-**Srirama Bhamidipati** is a contributor to GAMA since 2013 and is a GAMA evangelist. GAMA is developed by several teams under the umbrella of the IRD/UPMC international research unit UMMISCO.  (see www.gama-platform.org for more details).
+GAMA is developed by several teams under the umbrella of the IRD/UPMC international research unit UMMISCO.  (see www.gama-platform.org for more details).
 
 \
 
