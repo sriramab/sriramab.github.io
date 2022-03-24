@@ -1,0 +1,71 @@
+# Yadgiri
+
+```{r echo=FALSE,warning=FALSE, message=FALSE,  results='hide'}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = F)
+
+library(simplevis)
+library(dplyr)
+library(sf)
+library(ggplot2)
+library(magrittr)
+
+```
+
+```{r echo=FALSE, warning=FALSE, message=FALSE, results='hide'}
+library(magrittr)
+kal_polygon <- sf::st_read("/Volumes/Macintosh HD - Data/Users/srirama/Documents/raviuitp/yadgiri_division/wgs_yadgiri_accessibility.shp") 
+kal_polygon <- kal_polygon %>% select(-c(LGDGPCode)) %>% mutate(accessibility = cut(NUMPOINTS, breaks=c(-Inf,0,1,2,5,10,Inf)))
+kal_boundary <- kal_polygon %>% group_by(created_us) %>% summarise() 
+
+cities <-   read.csv("/Users/srirama/github_projects/ksrtc/data/cities.csv") %>% 
+  select(Worksheet, Depot, long, lat)
+city_sf <- st_as_sf(x = cities,                         
+           coords = c("long", "lat"),
+           crs = "EPSG:4326")
+
+kal_routes <- read_sf("/Volumes/Macintosh HD - Data/Users/srirama/Documents/raviuitp/yadgiri_division/yadgiri_routes.shp")
+
+state_boundary <- read_sf("/Volumes/Macintosh HD - Data/Users/srirama/Documents/raviuitp/shapefiles/State/State_Boundary.shp")
+
+
+```
+
+
+-   In total `r nrow(kal_routes)` trips were mapped for Yadgiri
+-   These trips cover about `r 100 - as.integer((kal_polygon %>% filter(NUMPOINTS ==0) %>% nrow())/nrow(kal_polygon) * 100)` percent of villages in the district.
+-   A total of `r kal_polygon %>% filter(NUMPOINTS ==0) %>% nrow()` villages are not covered by any bus service.
+-   The spatial distribution of trips are shown in figure \@ref(fig:routesYad)
+-   The spatial distribution of villages covered and villages not covered by the bus services are shown in figure \@ref(fig:accessYad)
+
+```{r routesYad, echo=FALSE, warning=FALSE, message=FALSE, results='hide', fig.cap = "Extent of services from Yadgir"}
+# Get the rectangular bounding box
+
+
+
+ggmap(mad_map) + 
+  geom_sf(data=kal_routes, inherit.aes = F, size = 0.4, col = "#165430") +
+  geom_sf(data= state_boundary, fill = NA, col = "red", inherit.aes = F)+
+  theme(axis.title=element_blank())
+
+```
+
+```{r accessYad, echo = FALSE, fig.cap = "Accessibility in Yadgiri"}
+
+library(RColorBrewer)
+brk<-levels(kal_polygon$accessibility)
+colr <- c("red", "blue", "green", "yellow", "pink", "lightgray")
+labls <- c("No service", "1 per day", "2 per day", "3-5 per day", "5-10 per day", "more than 10 per day")
+colrr <- c("red", rev(brewer.pal(5, "Greens")))
+
+
+
+ggplot(kal_polygon ) + geom_sf(aes(fill = accessibility),col = "NA") +
+  scale_fill_manual(values = colrr, breaks = brk, labels = labls )+
+  theme_bw()+
+  geom_sf(data= city_sf %>% filter(Worksheet == "Yadgiri")) +
+  geom_text(data= cities %>% filter(Worksheet == "Yadgiri"), aes(x= long, y = lat, label = Depot), vjust=-1)+
+  theme(axis.title=element_blank())
+  
+
+```
+

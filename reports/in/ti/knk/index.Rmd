@@ -1,61 +1,54 @@
 --- 
-title: "A Minimal Book Example"
-author: "John Doe"
+title: "Accessibility Mapping for NEKRTC"
+author: 
+ - Srirama Bhamidipati 
+ - Ravi Gadepalli
+ - Divyanka Dhok
+ - Rupa Nandy
 date: "`r Sys.Date()`"
 output: pdf_document
+geometry: margin=1in
 documentclass: book
 bibliography:
 - book.bib
 - packages.bib
 description: |
-  This is a minimal example of using the bookdown package to write a book.
-  set in the _output.yml file.
-  The HTML output format for this example is bookdown::gitbook,
+  This report analyses the spatial spread of NEKRTC and assesses the accesibility of bus services provided.
 link-citations: yes
 github-repo: rstudio/bookdown-demo
 site: bookdown::bookdown_site
+header-includes:
+  - \AtBeginDocument{\renewcommand{\chaptername}{}}
+  - \usepackage{titling}
+  - \pretitle{\begin{center}
+    \LARGE}
+  - \posttitle{\vskip 2cm \includegraphics[width=2in,height=2in]{./images/logo/Logo_UITP.png} \end{center}}
 ---
 
-# About
+```{r echo=FALSE,warning=FALSE, message=FALSE, cache=TRUE, results='hide'}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = F)
 
-This is a _sample_ book written in **Markdown**. You can use anything that Pandoc's Markdown supports; for example, a math equation $a^2 + b^2 = c^2$.
+library(simplevis)
+library(dplyr)
+library(sf)
+library(ggplot2)
+library(magrittr)
 
-## Usage 
-
-Each **bookdown** chapter is an .Rmd file, and each .Rmd file can contain one (and only one) chapter. A chapter *must* start with a first-level heading: `# A good chapter`, and can contain one (and only one) first-level heading.
-
-Use second-level and higher headings within chapters like: `## A short section` or `### An even shorter section`.
-
-The `index.Rmd` file is required, and is also your first book chapter. It will be the homepage when you render the book.
-
-## Render book
-
-You can render the HTML version of this example book without changing anything:
-
-1. Find the **Build** pane in the RStudio IDE, and
-
-1. Click on **Build Book**, then select your output format, or select "All formats" if you'd like to use multiple formats from the same book source files.
-
-Or build the book from the R console:
-
-```{r, eval=FALSE}
-bookdown::render_book()
-```
-
-To render this example to PDF as a `bookdown::pdf_book`, you'll need to install XeLaTeX. You are recommended to install TinyTeX (which includes XeLaTeX): <https://yihui.org/tinytex/>.
-
-## Preview book
-
-As you work, you may start a local server to live preview this HTML book. This preview will update as you edit the book when you save individual .Rmd files. You can start the server in a work session by using the RStudio add-in "Preview book", or from the R console:
-
-```{r eval=FALSE}
-bookdown::serve_book()
 ```
 
 
-```{r include=FALSE}
-# automatically create a bib database for R packages
-knitr::write_bib(c(
-  .packages(), 'bookdown', 'knitr', 'rmarkdown'
-), 'packages.bib')
-```
+# Introduction
+
+
+
+## Methodology Note
+
+- Step 1: All the excel worksheets of each of the Depot we aggregated into a spatial large database with latitude and longitude values of origin, destination and the via points. 
+
+- Step 2: This spatial database was then used with online routing algorithms to derive paths between origin and destinations via the intermediate points. 
+
+- Step 3: Any error in the length of the paths derived and the indicated distances in the excel worksheets given by each Depot was compared and corrections were carried out to minimize the errors.
+
+- Step 4: The resulting spatial database of trips is used further to assess the accessibility of services provided in the district. The village has access to a bus service if the bus service is within 2 km of the village.
+
+- Step 5: The results for each Depot are shown in two figures: a) The geographic extent of services within Karnataka and the adjoining states, b) the accessibility with emphasis on less than 10 services a day (shades of green) and villages with no access (red)
