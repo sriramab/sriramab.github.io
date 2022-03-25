@@ -16,15 +16,15 @@ title: ""
 
 
 
-<p> We at **BHUGOLE** are interested in doing spatial analysis and simulations. In this dimension, our focus is on challenges related to urban planning. These include infrastructure planning, transport planning, urban and regional planning and we largely use a simulation approach to address these challenges. </p>
+<p> We at **BHUGOLE** work on projects and challenges related to urban planning. These include infrastructure planning, transport planning, urban and regional planning and we largely use a simulation approach to address these challenges. </p>
 
 Our expertise is in:
 
  - Transport Planning
+ - Transit Planning
  - Traffic Simulation
  - Spatial Analysis
  - Pedestrian movements
- - Tourist Behavior
  - Agent based modeling
 
 \
