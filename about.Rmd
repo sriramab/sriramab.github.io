@@ -5,11 +5,10 @@ title: "About"
 \
 \
 
-<center> <font size = 5> We are Bhugole - pronounced [_bhu-goal_] </font>. </center> 
-<center> <font size = 4> [boo-ɡəʊl] </font> </center> 
+
 \
 
-<center> <font size = 4> Bhugole means _"the science of geography"_ in Sanskrit (an Indian language). </font> </center> <center> <font size = 4>We are based in the Netherlands. </font>  </center>
+
 
 \
 \

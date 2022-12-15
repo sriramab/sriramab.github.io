@@ -1,5 +1,5 @@
 ---
-title: "Bhugole"
+title: "MOBILYTICS"
 
 ---
 
@@ -7,16 +7,16 @@ title: "Bhugole"
 \
 \
 
-<center> <font size = 5> We are Bhugole </font>. </center> 
-\
-
-<center> <font size = 4> Bhugole means _"the science of geography"_ in Sanskrit (an Indian language).</font>  </center>
-
+<center> <font size = 5> We are MOBILYTICS </font>. </center> 
 \
 
 
 
-<p> We at **BHUGOLE** work on projects and challenges related to urban planning. These include infrastructure planning, transport planning, urban and regional planning and we largely use a simulation approach to address these challenges. </p>
+\
+
+
+
+<p> We at **MOBILYTICS** work on projects and challenges related to urban planning. These include infrastructure planning, transport planning, urban and regional planning and we largely use a simulation approach to address these challenges. </p>
 
 Our expertise is in:
 

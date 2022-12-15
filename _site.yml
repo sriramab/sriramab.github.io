@@ -1,6 +1,6 @@
-name: "bhugole"
+name: "MOBILYTICS"
 navbar: 
-  title: "BHUGOLE"
+  title: "MOBILYTICS"
   left:
     - text: "Home"
       href: index.html
@@ -13,7 +13,7 @@ navbar:
     - text: "About"
       href: about.html
     - text: "GAMA"
-      href: http://bhugole.com/gamamanual/
+      href: http://mobilytics.in/gamamanual/
 output:
   html_document:
     theme: cosmo
