@@ -31,9 +31,9 @@ Its latest version, 1.8, can be freely downloaded or built from source, and come
 
 Download the Latest Release for 
 <ul>
-<li> <a href = "https://github.com/gama-platform/gama/releases/tag/latest">  Windows 32/64</a> </li>
-<li> <a href = "https://github.com/gama-platform/gama/releases/tag/latest">  Linux 32/64</a> </li>
-<li> <a href = "https://github.com/gama-platform/gama/releases/tag/latest">  macOS</a> </li>
+<li> <a href = "https://github.com/gama-platform/gama/releases/latest">  Windows 32/64</a> </li>
+<li> <a href = "https://github.com/gama-platform/gama/releases/latest">  Linux 32/64</a> </li>
+<li> <a href = "https://github.com/gama-platform/gama/releases/latest">  macOS</a> </li>
 
 </ul>
 
