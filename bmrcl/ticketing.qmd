@@ -1,0 +1,145 @@
+---
+title: "Bengaluru Metro Ticketing Analytics"
+title-block-banner: true
+title-block-style: default
+description-meta: ""
+description: |
+    this report addresses questions
+author: 
+    - "Srirama Bhamidipati"
+    - "Ravi Gadepalli"
+
+date: today
+format:
+ html:
+    theme: flatly
+    toc: true
+    toc-title: "Contents"
+    
+---
+
+
+
+
+This is a big text followed by side text in a single line of the text of this document nothing more. This is a big text followed by side text in a single line of the text of this document. This is a big text followed by side text in a single line of the text of this document. This is a big text followed by side text in a single line of the text of this document. This is a big text followed by side text in a single line of the text of this document^[this is footnote]. 
+
+:::{.aside}
+This is a big text followed by side text in a single line of the text of this document. 
+:::
+
+
+::: {layout-ncol=2}
+
+:::
+
+```{r echo=F}
+
+library(ggplot2)
+datas <- ggplot2::diamonds
+#nrow(datas)
+
+ojs_define(i_datas = datas)
+```
+
+
+```{r echo=F}
+library(palmerpenguins)
+#head(palmerpenguins::penguins)
+dd <- palmerpenguins::penguins
+ojs_define(ee = dd)
+
+
+```
+
+```{ojs}
+//| echo: false
+
+
+mydata = transpose(ee)
+
+Inputs.table(mydata, {
+rows: 5
+})
+
+
+```
+
+```{ojs}
+//| echo: false
+/* create filter */
+viewof new_variable_name = Inputs.range(
+    [32,50],
+    {value:34, step:2, label:"Beak Length:"}
+ )
+
+
+ viewof dropselect = Inputs.checkbox(
+    ['Adelie','Gentoo'],
+    {value:'Adelie', label: "Species:"}
+ )
+
+/* use filter */
+
+filtered_data = mydata.filter( 
+    function(pp) {
+        return new_variable_name < pp.bill_length_mm &&
+        dropselect.includes(pp.species);
+    }
+)
+
+Inputs.table(filtered_data)
+
+
+/*figure*/
+
+
+```
+
+# How is it doing ?
+
+```{ojs}
+//| echo: false
+Plot.rectY(filtered_data, 
+  Plot.binX(
+    {y: "count"}, 
+    {x: "body_mass_g", fill: "species", thresholds: 20}
+  ))
+  .plot({
+    facet: {
+      data: filtered_data,
+      x: "sex",
+      y: "species",
+      marginRight: 80
+    },
+    marks: [
+      Plot.frame(),
+    ]
+  }
+)
+
+
+
+```
+
+# Back to R
+
+```{r echo=F, warnings=F, messages=F}
+#| warnings: false
+#| message: false 
+#| echo: false
+
+head(dd)
+library(tidyverse)
+
+ojs_define(scatter=dd %>% drop_na())
+```
+
+```{ojs}
+Plot.plot({
+  marks: [
+    Plot.dot(filtered_data, {x: "bill_length_mm", y: "bill_depth_mm"})
+    ]
+})
+
+```
+
