@@ -1,0 +1,52 @@
+---
+title: "filter"
+format: 
+  html:
+    self-contained: true
+editor: visual
+---
+
+## Quarto
+
+---
+title: "Interactive aggregation"
+format: html
+editor: visual
+---
+
+## Define data
+
+```{r}
+ojs_define(mydata = palmerpenguins::penguins)
+```
+
+## View data in JS
+
+```{ojs}
+import { aq, op } from '@uwdata/arquero'
+mytable = aq.table(mydata)
+mytable.view()
+```
+
+## Interactivity
+
+Input:
+
+```{ojs}
+viewof groupingvars = Inputs.checkbox(
+  ["species", "island", "sex"]
+)
+```
+
+Output:
+
+```{ojs}
+mytable
+  .groupby(groupingvars)
+  .filter(d => d.body_mass_g > 0)
+  .rollup({
+    count: op.count(),
+    avg_mass: op.average('body_mass_g')
+   })
+  .view()
+```
