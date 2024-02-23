@@ -75,13 +75,19 @@
 <li><a href="./">FlowMax-Q</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
-<li class="chapter" data-level="2" data-path="introduction-1.html"><a href="introduction-1.html"><i class="fa fa-check"></i><b>2</b> Introduction</a></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Preface</a></li>
+<li class="part"><span><b>I Buidling network in QGIS</b></span></li>
+<li class="chapter" data-level="2" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>2</b> Introduction</a></li>
 <li class="chapter" data-level="3" data-path="scenarios.html"><a href="scenarios.html"><i class="fa fa-check"></i><b>3</b> Scenarios</a></li>
 <li class="chapter" data-level="4" data-path="adding-links.html"><a href="adding-links.html"><i class="fa fa-check"></i><b>4</b> Adding Links</a></li>
-<li class="chapter" data-level="5" data-path="removing-links.html"><a href="removing-links.html"><i class="fa fa-check"></i><b>5</b> Removing Links</a></li>
+<li class="chapter" data-level="5" data-path="removing-links.html"><a href="removing-links.html"><i class="fa fa-check"></i><b>5</b> Removing Links</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="removing-links.html"><a href="removing-links.html#removing-a-link-disabling-links"><i class="fa fa-check"></i><b>5.1</b> Removing a Link (disabling links)</a></li>
+<li class="chapter" data-level="5.2" data-path="removing-links.html"><a href="removing-links.html#adding-back-an-existing-disabled-link"><i class="fa fa-check"></i><b>5.2</b> Adding back an Existing (disabled) Link</a></li>
+</ul></li>
 <li class="chapter" data-level="6" data-path="modifying-node-attributes.html"><a href="modifying-node-attributes.html"><i class="fa fa-check"></i><b>6</b> Modifying Node Attributes</a></li>
 <li class="chapter" data-level="7" data-path="modifying-edge-attributes.html"><a href="modifying-edge-attributes.html"><i class="fa fa-check"></i><b>7</b> Modifying Edge Attributes</a></li>
+<li class="part"><span><b>II QGIS Plugin</b></span></li>
 <li class="divider"></li>
 <li><a href="https://github.com/sriramab/" target="blank">Published by Mobilytics.in</a></li>
 
@@ -104,7 +110,18 @@
             <section class="normal" id="section-">
 <div id="removing-links" class="section level1 hasAnchor" number="5">
 <h1><span class="header-section-number">Section 5</span> Removing Links<a href="removing-links.html#removing-links" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="removing-a-link-disabling-links" class="section level2 hasAnchor" number="5.1">
+<h2><span class="header-section-number">5.1</span> Removing a Link (disabling links)<a href="removing-links.html#removing-a-link-disabling-links" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>It is advised not to remove a link (line-geometry) in GIS.
+It is recommended that you use the ‘active’ attribute in the link shapefile:
+- edit this attribute to a value 0 (integer) instead of 1(integer) for the link in consideration.<br />
+- Assigning a 0 will remove the ‘active = 0’ link(s) from path building of the Flowmax algorithm</p>
+</div>
+<div id="adding-back-an-existing-disabled-link" class="section level2 hasAnchor" number="5.2">
+<h2><span class="header-section-number">5.2</span> Adding back an Existing (disabled) Link<a href="removing-links.html#adding-back-an-existing-disabled-link" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>If you have set the ‘active’ attribute to 0 to exclude the link(s) from analysis, you can always set the ‘active’ attribute back to 1 to include the link(s) back into your analysis.</p>
 
+</div>
 </div>
             </section>
 

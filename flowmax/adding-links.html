@@ -75,13 +75,19 @@
 <li><a href="./">FlowMax-Q</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
-<li class="chapter" data-level="2" data-path="introduction-1.html"><a href="introduction-1.html"><i class="fa fa-check"></i><b>2</b> Introduction</a></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Preface</a></li>
+<li class="part"><span><b>I Buidling network in QGIS</b></span></li>
+<li class="chapter" data-level="2" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>2</b> Introduction</a></li>
 <li class="chapter" data-level="3" data-path="scenarios.html"><a href="scenarios.html"><i class="fa fa-check"></i><b>3</b> Scenarios</a></li>
 <li class="chapter" data-level="4" data-path="adding-links.html"><a href="adding-links.html"><i class="fa fa-check"></i><b>4</b> Adding Links</a></li>
-<li class="chapter" data-level="5" data-path="removing-links.html"><a href="removing-links.html"><i class="fa fa-check"></i><b>5</b> Removing Links</a></li>
+<li class="chapter" data-level="5" data-path="removing-links.html"><a href="removing-links.html"><i class="fa fa-check"></i><b>5</b> Removing Links</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="removing-links.html"><a href="removing-links.html#removing-a-link-disabling-links"><i class="fa fa-check"></i><b>5.1</b> Removing a Link (disabling links)</a></li>
+<li class="chapter" data-level="5.2" data-path="removing-links.html"><a href="removing-links.html#adding-back-an-existing-disabled-link"><i class="fa fa-check"></i><b>5.2</b> Adding back an Existing (disabled) Link</a></li>
+</ul></li>
 <li class="chapter" data-level="6" data-path="modifying-node-attributes.html"><a href="modifying-node-attributes.html"><i class="fa fa-check"></i><b>6</b> Modifying Node Attributes</a></li>
 <li class="chapter" data-level="7" data-path="modifying-edge-attributes.html"><a href="modifying-edge-attributes.html"><i class="fa fa-check"></i><b>7</b> Modifying Edge Attributes</a></li>
+<li class="part"><span><b>II QGIS Plugin</b></span></li>
 <li class="divider"></li>
 <li><a href="https://github.com/sriramab/" target="blank">Published by Mobilytics.in</a></li>
 
@@ -104,6 +110,14 @@
             <section class="normal" id="section-">
 <div id="adding-links" class="section level1 hasAnchor" number="4">
 <h1><span class="header-section-number">Section 4</span> Adding Links<a href="adding-links.html#adding-links" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Is the new link connecting to an existing link but not at an existing node location?</p>
+<ul>
+<li>Yes ? First assure that there is a node each for the source and destination of this new link
+- Yes ? create a line between source and destination nodes.
+- No? First create a node</li>
+<li>No? Is the new link connecting to an existing node location?
+- Yes? First assure that there is a node at the new location at the end of the new link (if the link starts from existing node)</li>
+</ul>
 
 </div>
             </section>
