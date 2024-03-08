@@ -85,7 +85,11 @@
 <li class="chapter" data-level="5.2" data-path="adding-links.html"><a href="adding-links.html#connect-to-an-existing-node"><i class="fa fa-check"></i><b>5.2</b> Connect to an existing node</a></li>
 <li class="chapter" data-level="5.3" data-path="adding-links.html"><a href="adding-links.html#adding-links---hands-on"><i class="fa fa-check"></i><b>5.3</b> Adding links - Hands-on</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="removing-links.html"><a href="removing-links.html"><i class="fa fa-check"></i><b>6</b> Removing Links</a></li>
+<li class="chapter" data-level="6" data-path="removing-links.html"><a href="removing-links.html"><i class="fa fa-check"></i><b>6</b> Removing Links</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="removing-links.html"><a href="removing-links.html#removing-a-link-disabling-links"><i class="fa fa-check"></i><b>6.1</b> Removing a Link (disabling links)</a></li>
+<li class="chapter" data-level="6.2" data-path="removing-links.html"><a href="removing-links.html#adding-back-an-existing-disabled-link"><i class="fa fa-check"></i><b>6.2</b> Adding back an Existing (disabled) Link</a></li>
+</ul></li>
 <li class="chapter" data-level="7" data-path="modifying-node-attributes.html"><a href="modifying-node-attributes.html"><i class="fa fa-check"></i><b>7</b> Modifying Node Attributes</a></li>
 <li class="chapter" data-level="8" data-path="modifying-edge-attributes.html"><a href="modifying-edge-attributes.html"><i class="fa fa-check"></i><b>8</b> Modifying Edge Attributes</a></li>
 <li class="part"><span><b>II QGIS Plugin</b></span></li>
@@ -113,7 +117,16 @@
 <div id="removing-links" class="section level1 hasAnchor" number="6">
 <h1><span class="header-section-number">Section 6</span> Removing Links<a href="removing-links.html#removing-links" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>Removing links is easier than adding links. It is recommended to disable links than to delete them.</p>
+<div id="removing-a-link-disabling-links" class="section level2 hasAnchor" number="6.1">
+<h2><span class="header-section-number">6.1</span> Removing a Link (disabling links)<a href="removing-links.html#removing-a-link-disabling-links" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>It is advised not to remove a link (line-geometry) in GIS. It is recommended that you use the ‘active’ attribute in the link shapefile: - edit this attribute to a value 0 (integer) instead of 1(integer) for the link in consideration.
+- Assigning a 0 will remove the ‘active = 0’ link(s) from path building of the Flowmax algorithm</p>
+</div>
+<div id="adding-back-an-existing-disabled-link" class="section level2 hasAnchor" number="6.2">
+<h2><span class="header-section-number">6.2</span> Adding back an Existing (disabled) Link<a href="removing-links.html#adding-back-an-existing-disabled-link" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>If you have set the ‘active’ attribute to 0 to exclude the link(s) from analysis, you can always set the ‘active’ attribute back to 1 to include the link(s) back into your analysis.</p>
 
+</div>
 </div>
             </section>
 
