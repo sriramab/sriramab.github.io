@@ -5,3 +5,7 @@
 .DS_Store
 .qmd
 
+./flowmax/.Rproj.user
+./flowmax/.Rhistory
+
+./flowmax/FlowMax-Q.pdf
