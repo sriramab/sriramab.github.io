@@ -83,7 +83,11 @@
 <ul>
 <li class="chapter" data-level="5.1" data-path="adding-links.html"><a href="adding-links.html#connect-to-an-non-existing-node"><i class="fa fa-check"></i><b>5.1</b> Connect to an non-existing node</a></li>
 <li class="chapter" data-level="5.2" data-path="adding-links.html"><a href="adding-links.html#connect-to-an-existing-node"><i class="fa fa-check"></i><b>5.2</b> Connect to an existing node</a></li>
-<li class="chapter" data-level="5.3" data-path="adding-links.html"><a href="adding-links.html#adding-links---hands-on"><i class="fa fa-check"></i><b>5.3</b> Adding links - Hands-on</a></li>
+<li class="chapter" data-level="5.3" data-path="adding-links.html"><a href="adding-links.html#hands-on"><i class="fa fa-check"></i><b>5.3</b> Hands-on</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="adding-links.html"><a href="adding-links.html#adding-a-new-link-from-an-existing-node"><i class="fa fa-check"></i><b>5.3.1</b> Adding a New Link from an existing node</a></li>
+<li class="chapter" data-level="5.3.2" data-path="adding-links.html"><a href="adding-links.html#adding-a-new-link-from-an-existing-link"><i class="fa fa-check"></i><b>5.3.2</b> Adding a New Link from an existing link</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="removing-links.html"><a href="removing-links.html"><i class="fa fa-check"></i><b>6</b> Removing Links</a>
 <ul>
@@ -131,19 +135,37 @@
 <li>Create a line between source and destination nodes.</li>
 </ul>
 </div>
-<div id="adding-links---hands-on" class="section level2 hasAnchor" number="5.3">
-<h2><span class="header-section-number">5.3</span> Adding links - Hands-on<a href="adding-links.html#adding-links---hands-on" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<ul>
+<div id="hands-on" class="section level2 hasAnchor" number="5.3">
+<h2><span class="header-section-number">5.3</span> Hands-on<a href="adding-links.html#hands-on" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="adding-a-new-link-from-an-existing-node" class="section level3 hasAnchor" number="5.3.1">
+<h3><span class="header-section-number">5.3.1</span> Adding a New Link from an existing node<a href="adding-links.html#adding-a-new-link-from-an-existing-node" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ol style="list-style-type: decimal">
 <li>Check the highest node number (NodeID<sub>H</sub>) from the node file. To do this, open the attribute table of the shapefile <strong>Right Click on the node layer&gt; Open Attribute Table</strong> . Scroll if required to see the NodeID field, <strong>Click on the field heading</strong> to sort the column in ascending or descending order. When in descending order, make note of the top most row to identify the current highest node number.</li>
-<li>Set the node file in edit mode, and add a node (point geometry) to the node file and assign it a node number = NodeID<sub>H</sub>+1</li>
-<li>Fill in all other node attribute columns as necessary (<a href="modifying-node-attributes.html#modifying-node-attributes">see also</a>)</li>
+<li>Set the node file in edit mode, and add a node (point geometry) to the node file and assign it a node number = NodeID<sub>H</sub>+1
+- Fill in all other node attribute columns as necessary (<a href="modifying-node-attributes.html#modifying-node-attributes">see how</a>)</li>
 <li>Save edits and stop the edit mode on node file.</li>
 <li>Check the highest edge number (EdgeID<sub>H</sub>) from the link file.</li>
-<li>Set the link file in edit mode and add a link (line-geometry) from existing node to the new node created in step 2, assign this link an edge number = EdgeID<sub>H</sub> + 1</li>
-<li>Fill in all other link attribute columns as necessary (<a href="modifying-edge-attributes.html#modifying-edge-attributes">see also</a>)</li>
+<li>Set the link file in edit mode and add a link (line-geometry) from existing node to the new node created in step 2, assign this link an edge number = EdgeID<sub>H</sub> + 1
+- Fill in all other link attribute columns as necessary (<a href="modifying-edge-attributes.html#modifying-edge-attributes">see how</a>)</li>
 <li>Save edits and stop the edit mode on link file</li>
-</ul>
+</ol>
+</div>
+<div id="adding-a-new-link-from-an-existing-link" class="section level3 hasAnchor" number="5.3.2">
+<h3><span class="header-section-number">5.3.2</span> Adding a New Link from an existing link<a href="adding-links.html#adding-a-new-link-from-an-existing-link" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ol style="list-style-type: decimal">
+<li>Check the highest node id (NodeID<sub>H</sub>) from the node file.</li>
+<li>Set the node file in edit mode, and add a node (point geometry) to the node file at the required location on an existing link and assign it a node number = NodeID<sub>H</sub>+1
+- Fill in all other node attribute columns as necessary (<a href="modifying-node-attributes.html#modifying-node-attributes">see how</a>)</li>
+<li>Save edits and stop the edit mode on node file.</li>
+<li>Split the existing link at this new node from step 2.
+- When you split the link into two, the first part can retain existing edgeID but the second part needs a new edgeID.</li>
+<li>Check the highest edgeID number (EdgeID<sub>H</sub>) from the link file.</li>
+<li>Set the link file in edit mode and assign this second part link an edgeID = EdgeID<sub>H</sub> + 1
+- Fill in all other link attribute columns as necessary (<a href="modifying-edge-attributes.html#modifying-edge-attributes">see how</a>)</li>
+<li>Save edits and stop the edit mode on link file</li>
+</ol>
 
+</div>
 </div>
 </div>
             </section>

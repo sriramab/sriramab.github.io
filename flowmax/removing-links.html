@@ -83,7 +83,11 @@
 <ul>
 <li class="chapter" data-level="5.1" data-path="adding-links.html"><a href="adding-links.html#connect-to-an-non-existing-node"><i class="fa fa-check"></i><b>5.1</b> Connect to an non-existing node</a></li>
 <li class="chapter" data-level="5.2" data-path="adding-links.html"><a href="adding-links.html#connect-to-an-existing-node"><i class="fa fa-check"></i><b>5.2</b> Connect to an existing node</a></li>
-<li class="chapter" data-level="5.3" data-path="adding-links.html"><a href="adding-links.html#adding-links---hands-on"><i class="fa fa-check"></i><b>5.3</b> Adding links - Hands-on</a></li>
+<li class="chapter" data-level="5.3" data-path="adding-links.html"><a href="adding-links.html#hands-on"><i class="fa fa-check"></i><b>5.3</b> Hands-on</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="adding-links.html"><a href="adding-links.html#adding-a-new-link-from-an-existing-node"><i class="fa fa-check"></i><b>5.3.1</b> Adding a New Link from an existing node</a></li>
+<li class="chapter" data-level="5.3.2" data-path="adding-links.html"><a href="adding-links.html#adding-a-new-link-from-an-existing-link"><i class="fa fa-check"></i><b>5.3.2</b> Adding a New Link from an existing link</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="removing-links.html"><a href="removing-links.html"><i class="fa fa-check"></i><b>6</b> Removing Links</a>
 <ul>
@@ -119,12 +123,15 @@
 <p>Removing links is easier than adding links. It is recommended to disable links than to delete them.</p>
 <div id="removing-a-link-disabling-links" class="section level2 hasAnchor" number="6.1">
 <h2><span class="header-section-number">6.1</span> Removing a Link (disabling links)<a href="removing-links.html#removing-a-link-disabling-links" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>It is advised not to remove a link (line-geometry) in GIS. It is recommended that you use the ‘active’ attribute in the link shapefile: - edit this attribute to a value 0 (integer) instead of 1(integer) for the link in consideration.
-- Assigning a 0 will remove the ‘active = 0’ link(s) from path building of the Flowmax algorithm</p>
+<p>It is advised not to remove a link (line-geometry) in GIS. It is recommended that you use the <code>active</code> attribute in the link shapefile:</p>
+<ul>
+<li><p>edit this attribute to a value 0 (integer) instead of a value 1(integer) for the link in consideration.</p></li>
+<li><p>Assigning a 0 will add the current link to a set of inactive links i.e., FlowMax will remove all the links with <code>active = 0</code> from path building of the Flowmax algorithm</p></li>
+</ul>
 </div>
 <div id="adding-back-an-existing-disabled-link" class="section level2 hasAnchor" number="6.2">
 <h2><span class="header-section-number">6.2</span> Adding back an Existing (disabled) Link<a href="removing-links.html#adding-back-an-existing-disabled-link" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>If you have set the ‘active’ attribute to 0 to exclude the link(s) from analysis, you can always set the ‘active’ attribute back to 1 to include the link(s) back into your analysis.</p>
+<p>If you have set the <code>active</code> attribute to 0 to exclude the link(s) from analysis, you can always set the <code>active</code> attribute back to 1 to include the link(s) back into your analysis.</p>
 
 </div>
 </div>
