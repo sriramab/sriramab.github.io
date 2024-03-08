@@ -84,6 +84,8 @@
 \fancyfoot[LE,RO]{\thepage}
 
 
+\usepackage {hyperref}
+\hypersetup {colorlinks = true, linkcolor = red, urlcolor = red}
 \ifLuaTeX
   \usepackage{selnolig}  % disable illegal ligatures
 \fi
@@ -100,7 +102,7 @@
 
 \title{FlowMax-Q Manual}
 \author{Srirama Bhamidipati}
-\date{Last Updated 2024-03-08 16:00:14 Asia/Calcutta}
+\date{Last Updated 2024-03-08 18:34:08 Asia/Calcutta}
 
 \begin{document}
 \maketitle
@@ -112,9 +114,10 @@
 \chapter*{Preface}\label{preface}
 \addcontentsline{toc}{chapter}{Preface}
 
-This manual\footnote{Version \textbf{15b24d1}} is divided into two parts. Part I deals with handling FlowMax network (nodes and edges) in a QGIS environemnt and Part II deals with using the FlowMax-Q, a QGIS plugin to work with outputs from FlowMax.
+This manual\footnote{Version \textbf{f1cc606}} is divided into two parts. Part I deals with handling FlowMax network (nodes and edges) in a QGIS environemnt and Part II deals with using the FlowMax-Q, a QGIS plugin to work with outputs from FlowMax.
 
-\part{Editing in QGIS}\label{part-editing-in-qgis}
+\part*{Editing in QGIS}\label{part-editing-in-qgis}
+\addcontentsline{toc}{part}{Editing in QGIS}
 
 \chapter{Introduction}\label{introduction}
 
@@ -268,8 +271,53 @@ Link file: All links come with predefined attributes. Whenever a new link is add
 
 To edit: \textbf{right click the link file \textgreater{} open attribute table \textgreater{} start edit mode}. Select the required record and modify the values as necessary. After editing, save the edits and close the table. This applies to all scenarios where attribute values must be changed: capacity, speed, travel time, quality of links etc.
 
-\part{QGIS Plugin}\label{part-qgis-plugin}
+\part*{QGIS Plugin}\label{part-qgis-plugin}
+\addcontentsline{toc}{part}{QGIS Plugin}
 
-\chapter{Installing the plugin}\label{installing-the-plugin}
+\chapter{Downloading and Installing}\label{downloading-and-installing}
+
+The latest version of the plugin can be downloaded from \textbf{\url{https://github.com/sriramab/wbafrica/releases/latest}}
+
+Installing the plugin is straightforward.
+
+\begin{itemize}
+\tightlist
+\item
+  Download the plugin from the link above. This downloads a zip file.
+\item
+  Open \textbf{QGIS\textgreater Plugins\textgreater Manage and Install Plugins\ldots{}}
+\end{itemize}
+
+\includegraphics{./images/afterDownload.png}
+
+\begin{itemize}
+\tightlist
+\item
+  This will open a dialog box as shown below. Follow the sequence of buttons as shown in the figure below. Browse to the folder where the download zip is saved. Click on Install button and then on Done.
+\end{itemize}
+
+\includegraphics{./images/Installdialog.png}
+
+\begin{itemize}
+\tightlist
+\item
+  After installing, the plugin gets installed into the \texttt{Processing\ Toolbox}.
+\end{itemize}
+
+\includegraphics{./images/processing.png}
+
+\chapter{Plugin Functions}\label{plugin-functions}
+
+\section{Import FlowMax Results}\label{import-flowmax-results}
+
+\includegraphics{./images/import.png}
+
+\section{Compare FlowMax Scenarios}\label{compare-flowmax-scenarios}
+
+\includegraphics{./images/compare.png}
+
+\section{FlowMax Corridors}\label{flowmax-corridors}
+
+\includegraphics{./images/corridors.png}
 
 \end{document}
