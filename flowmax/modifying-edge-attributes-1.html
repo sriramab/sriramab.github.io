@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Section 6 Removing Links | FlowMax-Q Manual</title>
+  <title>Section 7 Modifying Edge Attributes | FlowMax-Q Manual</title>
   <meta name="description" content="This is a manual for using the QGIS Plugin FlowMax-Q" />
   <meta name="generator" content="bookdown 0.37 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Section 6 Removing Links | FlowMax-Q Manual" />
+  <meta property="og:title" content="Section 7 Modifying Edge Attributes | FlowMax-Q Manual" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="This is a manual for using the QGIS Plugin FlowMax-Q" />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Section 6 Removing Links | FlowMax-Q Manual" />
+  <meta name="twitter:title" content="Section 7 Modifying Edge Attributes | FlowMax-Q Manual" />
   
   <meta name="twitter:description" content="This is a manual for using the QGIS Plugin FlowMax-Q" />
   
@@ -29,8 +29,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="adding-links.html"/>
-<link rel="next" href="modifying-node-attributes.html"/>
+<link rel="prev" href="modifying-edge-attributes.html"/>
+
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -77,19 +77,13 @@
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
 <li class="part"><span><b>I Editing in QGIS</b></span></li>
-<li class="chapter" data-level="3" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>3</b> Introduction</a></li>
-<li class="chapter" data-level="4" data-path="scenarios.html"><a href="scenarios.html"><i class="fa fa-check"></i><b>4</b> Scenarios</a></li>
-<li class="chapter" data-level="5" data-path="adding-links.html"><a href="adding-links.html"><i class="fa fa-check"></i><b>5</b> Adding Links</a>
-<ul>
-<li class="chapter" data-level="5.1" data-path="adding-links.html"><a href="adding-links.html#connect-to-an-non-existing-node"><i class="fa fa-check"></i><b>5.1</b> Connect to an non-existing node</a></li>
-<li class="chapter" data-level="5.2" data-path="adding-links.html"><a href="adding-links.html#connect-to-an-existing-node"><i class="fa fa-check"></i><b>5.2</b> Connect to an existing node</a></li>
-<li class="chapter" data-level="5.3" data-path="adding-links.html"><a href="adding-links.html#adding-links---hands-on"><i class="fa fa-check"></i><b>5.3</b> Adding links - Hands-on</a></li>
-</ul></li>
-<li class="chapter" data-level="6" data-path="removing-links.html"><a href="removing-links.html"><i class="fa fa-check"></i><b>6</b> Removing Links</a></li>
-<li class="chapter" data-level="7" data-path="modifying-node-attributes.html"><a href="modifying-node-attributes.html"><i class="fa fa-check"></i><b>7</b> Modifying Node Attributes</a></li>
-<li class="chapter" data-level="8" data-path="modifying-edge-attributes.html"><a href="modifying-edge-attributes.html"><i class="fa fa-check"></i><b>8</b> Modifying Edge Attributes</a></li>
-<li class="part"><span><b>II QGIS Plugin</b></span></li>
-<li class="chapter" data-level="10" data-path="installing-the-plugin.html"><a href="installing-the-plugin.html"><i class="fa fa-check"></i><b>10</b> Installing the plugin</a></li>
+<li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
+<li class="chapter" data-level="2" data-path="scenarios.html"><a href="scenarios.html"><i class="fa fa-check"></i><b>2</b> Scenarios</a></li>
+<li class="chapter" data-level="3" data-path="adding-links.html"><a href="adding-links.html"><i class="fa fa-check"></i><b>3</b> Adding Links</a></li>
+<li class="chapter" data-level="4" data-path="removing-links.html"><a href="removing-links.html"><i class="fa fa-check"></i><b>4</b> Removing Links</a></li>
+<li class="chapter" data-level="5" data-path="modifying-node-attributes.html"><a href="modifying-node-attributes.html"><i class="fa fa-check"></i><b>5</b> Modifying Node Attributes</a></li>
+<li class="chapter" data-level="6" data-path="modifying-edge-attributes.html"><a href="modifying-edge-attributes.html"><i class="fa fa-check"></i><b>6</b> Modifying Edge Attributes</a></li>
+<li class="chapter" data-level="7" data-path="modifying-edge-attributes-1.html"><a href="modifying-edge-attributes-1.html"><i class="fa fa-check"></i><b>7</b> Modifying Edge Attributes</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/sriramab/" target="blank">Published by Mobilytics.in</a></li>
 
@@ -110,9 +104,8 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="removing-links" class="section level1 hasAnchor" number="6">
-<h1><span class="header-section-number">Section 6</span> Removing Links<a href="removing-links.html#removing-links" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>Removing links is easier than adding links. It is recommended to disable links than to delete them.</p>
+<div id="modifying-edge-attributes-1" class="section level1 hasAnchor" number="7">
+<h1><span class="header-section-number">Section 7</span> Modifying Edge Attributes<a href="modifying-edge-attributes-1.html#modifying-edge-attributes-1" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 
 </div>
             </section>
@@ -120,8 +113,8 @@
           </div>
         </div>
       </div>
-<a href="adding-links.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="modifying-node-attributes.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="modifying-edge-attributes.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

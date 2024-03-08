@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Section 3 Adding Links | FlowMax-Q Manual</title>
+  <title>Section 5 Adding Links | FlowMax-Q Manual</title>
   <meta name="description" content="This is a manual for using the QGIS Plugin FlowMax-Q" />
   <meta name="generator" content="bookdown 0.37 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Section 3 Adding Links | FlowMax-Q Manual" />
+  <meta property="og:title" content="Section 5 Adding Links | FlowMax-Q Manual" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="This is a manual for using the QGIS Plugin FlowMax-Q" />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Section 3 Adding Links | FlowMax-Q Manual" />
+  <meta name="twitter:title" content="Section 5 Adding Links | FlowMax-Q Manual" />
   
   <meta name="twitter:description" content="This is a manual for using the QGIS Plugin FlowMax-Q" />
   
@@ -76,18 +76,20 @@
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
-<li class="part"><span><b>I Buidling network in QGIS</b></span></li>
-<li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
-<li class="chapter" data-level="2" data-path="scenarios.html"><a href="scenarios.html"><i class="fa fa-check"></i><b>2</b> Scenarios</a></li>
-<li class="chapter" data-level="3" data-path="adding-links.html"><a href="adding-links.html"><i class="fa fa-check"></i><b>3</b> Adding Links</a></li>
-<li class="chapter" data-level="4" data-path="removing-links.html"><a href="removing-links.html"><i class="fa fa-check"></i><b>4</b> Removing Links</a>
+<li class="part"><span><b>I Editing in QGIS</b></span></li>
+<li class="chapter" data-level="3" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>3</b> Introduction</a></li>
+<li class="chapter" data-level="4" data-path="scenarios.html"><a href="scenarios.html"><i class="fa fa-check"></i><b>4</b> Scenarios</a></li>
+<li class="chapter" data-level="5" data-path="adding-links.html"><a href="adding-links.html"><i class="fa fa-check"></i><b>5</b> Adding Links</a>
 <ul>
-<li class="chapter" data-level="4.1" data-path="removing-links.html"><a href="removing-links.html#removing-a-link-disabling-links"><i class="fa fa-check"></i><b>4.1</b> Removing a Link (disabling links)</a></li>
-<li class="chapter" data-level="4.2" data-path="removing-links.html"><a href="removing-links.html#adding-back-an-existing-disabled-link"><i class="fa fa-check"></i><b>4.2</b> Adding back an Existing (disabled) Link</a></li>
+<li class="chapter" data-level="5.1" data-path="adding-links.html"><a href="adding-links.html#connect-to-an-non-existing-node"><i class="fa fa-check"></i><b>5.1</b> Connect to an non-existing node</a></li>
+<li class="chapter" data-level="5.2" data-path="adding-links.html"><a href="adding-links.html#connect-to-an-existing-node"><i class="fa fa-check"></i><b>5.2</b> Connect to an existing node</a></li>
+<li class="chapter" data-level="5.3" data-path="adding-links.html"><a href="adding-links.html#adding-links---hands-on"><i class="fa fa-check"></i><b>5.3</b> Adding links - Hands-on</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="modifying-node-attributes.html"><a href="modifying-node-attributes.html"><i class="fa fa-check"></i><b>5</b> Modifying Node Attributes</a></li>
-<li class="chapter" data-level="6" data-path="modifying-edge-attributes.html"><a href="modifying-edge-attributes.html"><i class="fa fa-check"></i><b>6</b> Modifying Edge Attributes</a></li>
+<li class="chapter" data-level="6" data-path="removing-links.html"><a href="removing-links.html"><i class="fa fa-check"></i><b>6</b> Removing Links</a></li>
+<li class="chapter" data-level="7" data-path="modifying-node-attributes.html"><a href="modifying-node-attributes.html"><i class="fa fa-check"></i><b>7</b> Modifying Node Attributes</a></li>
+<li class="chapter" data-level="8" data-path="modifying-edge-attributes.html"><a href="modifying-edge-attributes.html"><i class="fa fa-check"></i><b>8</b> Modifying Edge Attributes</a></li>
 <li class="part"><span><b>II QGIS Plugin</b></span></li>
+<li class="chapter" data-level="10" data-path="installing-the-plugin.html"><a href="installing-the-plugin.html"><i class="fa fa-check"></i><b>10</b> Installing the plugin</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/sriramab/" target="blank">Published by Mobilytics.in</a></li>
 
@@ -108,17 +110,37 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="adding-links" class="section level1 hasAnchor" number="3">
-<h1><span class="header-section-number">Section 3</span> Adding Links<a href="adding-links.html#adding-links" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>Is the new link connecting to an existing link but not at an existing node location?</p>
+<div id="adding-links" class="section level1 hasAnchor" number="5">
+<h1><span class="header-section-number">Section 5</span> Adding Links<a href="adding-links.html#adding-links" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="connect-to-an-non-existing-node" class="section level2 hasAnchor" number="5.1">
+<h2><span class="header-section-number">5.1</span> Connect to an non-existing node<a href="adding-links.html#connect-to-an-non-existing-node" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Is there an existing node at the source or destination of this (to be added) new link?</p>
 <ul>
-<li>Yes ? First assure that there is a node each for the source and destination of this new link
-- Yes ? create a line between source and destination nodes.
-- No? First create a node</li>
-<li>No? Is the new link connecting to an existing node location?
-- Yes? First assure that there is a node at the new location at the end of the new link (if the link starts from existing node)</li>
+<li>No? First create a node(s) and then create a line between source and destination nodes.</li>
+<li>Yes ? Create a line between source and destination nodes.</li>
+</ul>
+</div>
+<div id="connect-to-an-existing-node" class="section level2 hasAnchor" number="5.2">
+<h2><span class="header-section-number">5.2</span> Connect to an existing node<a href="adding-links.html#connect-to-an-existing-node" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Is the new link connecting to an existing node location?</p>
+<ul>
+<li>Create a line between source and destination nodes.</li>
+</ul>
+</div>
+<div id="adding-links---hands-on" class="section level2 hasAnchor" number="5.3">
+<h2><span class="header-section-number">5.3</span> Adding links - Hands-on<a href="adding-links.html#adding-links---hands-on" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li>Check the highest node number (NodeID<sub>H</sub>) from the node file. To do this, open the attribute table of the shapefile <strong>Right Click on the node layer&gt; Open Attribute Table</strong> . Scroll if required to see the NodeID field, <strong>Click on the field heading</strong> to sort the column in ascending or descending order. When in descending order, make note of the top most row to identify the current highest node number.</li>
+<li>Set the node file in edit mode, and add a node (point geometry) to the node file and assign it a node number = NodeID<sub>H</sub>+1</li>
+<li>Fill in all other node attribute columns as necessary (<a href="modifying-node-attributes.html#modifying-node-attributes">see also</a>)</li>
+<li>Save edits and stop the edit mode on node file.</li>
+<li>Check the highest edge number (EdgeID<sub>H</sub>) from the link file.</li>
+<li>Set the link file in edit mode and add a link (line-geometry) from existing node to the new node created in step 2, assign this link an edge number = EdgeID<sub>H</sub> + 1</li>
+<li>Fill in all other link attribute columns as necessary (<a href="modifying-edge-attributes.html#modifying-edge-attributes">see also</a>)</li>
+<li>Save edits and stop the edit mode on link file</li>
 </ul>
 
+</div>
 </div>
             </section>
 

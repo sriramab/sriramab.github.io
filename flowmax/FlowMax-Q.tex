@@ -64,12 +64,32 @@
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 \setcounter{secnumdepth}{5}
 \usepackage{booktabs}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+
+\usepackage{xstring}
+\usepackage{catchfile}
+\CatchFileDef{\HEAD}{.git/refs/heads/master}{}
+\newcommand{\gitrevision}{%
+  \StrLeft{\HEAD}{7}%
+}
+
+
+% center of header
+\fancyhead[CO,CE]{}
+% center of footer
+\fancyfoot[CO,CE]{\gitrevision}
+% page number on the left of even pages and right of odd pages
+\fancyfoot[LE,RO]{\thepage}
+
+
 \ifLuaTeX
   \usepackage{selnolig}  % disable illegal ligatures
 \fi
 \usepackage[]{natbib}
 \bibliographystyle{plainnat}
-\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\usepackage{bookmark}
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
 \urlstyle{same}
 \hypersetup{
@@ -80,7 +100,7 @@
 
 \title{FlowMax-Q Manual}
 \author{Srirama Bhamidipati}
-\date{Last Updated 2024-02-23 15:54:17.147981 Europe/Amsterdam}
+\date{Last Updated 2024-03-08 15:17:25 Asia/Calcutta}
 
 \begin{document}
 \maketitle
@@ -89,91 +109,117 @@
 \setcounter{tocdepth}{1}
 \tableofcontents
 }
-\hypertarget{preface}{%
-\chapter*{Preface}\label{preface}}
+\chapter*{Preface}\label{preface}
 \addcontentsline{toc}{chapter}{Preface}
 
-This manual is divided into two parts. The first part deals with Creating and Editing Networks in QGIS environment while the second part deals with Using the QGIS plugin.
+This manual\footnote{Version \textbf{d99dce5}} is divided into two parts. Part I deals with handling FlowMax network (nodes and edges) in a QGIS environemnt and Part II deals with using the FlowMax-Q, a QGIS plugin to work with outputs from FlowMax.
 
-\hypertarget{part-buidling-network-in-qgis}{%
-\part{Buidling network in QGIS}\label{part-buidling-network-in-qgis}}
+\part{Editing in QGIS}\label{part-editing-in-qgis}
 
-\hypertarget{introduction}{%
-\chapter{Introduction}\label{introduction}}
+\chapter{Introduction}\label{introduction}
 
 \begin{itemize}
 \tightlist
 \item
   Economy based scenarios are to be modified in the trade-databases.
 \item
-  Resilience based scenarios (GIS) fall into 2 categories: node-based, edge-based. These in turn fall into 2 categories: editing geometries; editing attributes
+  Resilience based scenarios (GIS) fall into 2 categories:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    node-based
+
+    \begin{itemize}
+    \tightlist
+    \item
+      editing geometries;
+    \item
+      editing attributes
+    \end{itemize}
+  \item
+    edge-based
+
+    \begin{itemize}
+    \tightlist
+    \item
+      editing geometries;
+    \item
+      editing attributes
+    \end{itemize}
+  \end{itemize}
 \item
   Technology based scenarios will affect the demand (freight composition)
 \item
   Policy based scenarios will affect the route and mode choices (freight composition)
 \end{itemize}
 
-\hypertarget{scenarios}{%
-\chapter{Scenarios}\label{scenarios}}
+\chapter{Scenarios}\label{scenarios}
 
 The image below shows the underlying structure of constructing scenarios
 
 \begin{figure}
 \centering
-\includegraphics{"./Picture1.png"}
+\includegraphics{images/Picture1.png}
 \caption{Scenarios}
 \end{figure}
 
-\hypertarget{adding-links}{%
-\chapter{Adding Links}\label{adding-links}}
+\chapter{Adding Links}\label{adding-links}
 
-Is the new link connecting to an existing link but not at an existing node location?
+\section{Connect to an non-existing node}\label{connect-to-an-non-existing-node}
+
+Is there an existing node at the source or destination of this (to be added) new link?
 
 \begin{itemize}
 \tightlist
 \item
-  Yes ? First assure that there is a node each for the source and destination of this new link
-  - Yes ? create a line between source and destination nodes.
-  - No? First create a node
+  No? First create a node(s) and then create a line between source and destination nodes.
 \item
-  No? Is the new link connecting to an existing node location?
-  - Yes? First assure that there is a node at the new location at the end of the new link (if the link starts from existing node)
+  Yes ? Create a line between source and destination nodes.
 \end{itemize}
 
-\hypertarget{removing-links}{%
-\chapter{Removing Links}\label{removing-links}}
+\section{Connect to an existing node}\label{connect-to-an-existing-node}
 
-\hypertarget{removing-a-link-disabling-links}{%
-\section{Removing a Link (disabling links)}\label{removing-a-link-disabling-links}}
+Is the new link connecting to an existing node location?
 
-It is advised not to remove a link (line-geometry) in GIS.
-It is recommended that you use the `active' attribute in the link shapefile:
-- edit this attribute to a value 0 (integer) instead of 1(integer) for the link in consideration.\\
-- Assigning a 0 will remove the `active = 0' link(s) from path building of the Flowmax algorithm
+\begin{itemize}
+\tightlist
+\item
+  Create a line between source and destination nodes.
+\end{itemize}
 
-\hypertarget{adding-back-an-existing-disabled-link}{%
-\section{Adding back an Existing (disabled) Link}\label{adding-back-an-existing-disabled-link}}
+\section{Adding links - Hands-on}\label{adding-links---hands-on}
 
-If you have set the `active' attribute to 0 to exclude the link(s) from analysis, you can always set the `active' attribute back to 1 to include the link(s) back into your analysis.
+\begin{itemize}
+\tightlist
+\item
+  Check the highest node number (NodeID\textsubscript{H}) from the node file. To do this, open the attribute table of the shapefile \textbf{Right Click on the node layer\textgreater{} Open Attribute Table} . Scroll if required to see the NodeID field, \textbf{Click on the field heading} to sort the column in ascending or descending order. When in descending order, make note of the top most row to identify the current highest node number.
+\item
+  Set the node file in edit mode, and add a node (point geometry) to the node file and assign it a node number = NodeID\textsubscript{H}+1
+\item
+  Fill in all other node attribute columns as necessary (\hyperref[modifying-node-attributes]{see also})
+\item
+  Save edits and stop the edit mode on node file.
+\item
+  Check the highest edge number (EdgeID\textsubscript{H}) from the link file.
+\item
+  Set the link file in edit mode and add a link (line-geometry) from existing node to the new node created in step 2, assign this link an edge number = EdgeID\textsubscript{H} + 1
+\item
+  Fill in all other link attribute columns as necessary (\hyperref[modifying-edge-attributes]{see also})
+\item
+  Save edits and stop the edit mode on link file
+\end{itemize}
 
-\hypertarget{modifying-node-attributes}{%
-\chapter{Modifying Node Attributes}\label{modifying-node-attributes}}
+\chapter{Removing Links}\label{removing-links}
 
-Node file: All nodes come with predefined attributes. Whenever a new node is added, all the attributes should be assigned a value (either a known value or a default value)
+Removing links is easier than adding links. It is recommended to disable links than to delete them.
 
-To edit: right click the node file \textgreater{} open attribute table \textgreater{} start edit mode. Select any cell and change values as required. After editing, save the edits and close the table.
+\chapter{Modifying Node Attributes}\label{modifying-node-attributes}
 
-This applies to all scenarios where attribute values must be changed: capacity, speed, travel time, quality of links etc.
+\chapter{Modifying Edge Attributes}\label{modifying-edge-attributes}
 
-\hypertarget{modifying-edge-attributes}{%
-\chapter{Modifying Edge Attributes}\label{modifying-edge-attributes}}
+\part{QGIS Plugin}\label{part-qgis-plugin}
 
-Link file: All links come with predefined attributes. Whenever a new link is added, all the attributes should be assigned a value (either a known value or a default value)
-
-To edit: right click the link file \textgreater{} open attribute table \textgreater{} start edit mode. Select any cell and change values as required. After editing, save the edits and close the table.
-This applies to all scenarios where attribute values must be changed: capacity, speed, travel time, quality of links etc.
-
-\hypertarget{part-qgis-plugin}{%
-\part{QGIS Plugin}\label{part-qgis-plugin}}
+\chapter{Installing the plugin}\label{installing-the-plugin}
 
 \end{document}
