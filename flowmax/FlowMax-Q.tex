@@ -96,13 +96,13 @@
 \urlstyle{same}
 \hypersetup{
   pdftitle={FlowMax-Q Manual},
-  pdfauthor={Srirama Bhamidipati},
+  pdfauthor={Srirama Bhamidipati; sriram@mobilytics.in},
   hidelinks,
   pdfcreator={LaTeX via pandoc}}
 
 \title{FlowMax-Q Manual}
-\author{Srirama Bhamidipati}
-\date{Last Updated 2024-03-08 18:34:08 Asia/Calcutta}
+\author{Srirama Bhamidipati \and \href{mailto:sriram@mobilytics.in}{\nolinkurl{sriram@mobilytics.in}}}
+\date{Last Updated 2024-04-02 18:01:04 Asia/Calcutta}
 
 \begin{document}
 \maketitle
@@ -114,10 +114,19 @@
 \chapter*{Preface}\label{preface}
 \addcontentsline{toc}{chapter}{Preface}
 
-This manual\footnote{Version \textbf{f1cc606}} is divided into two parts. Part I deals with handling FlowMax network (nodes and edges) in a QGIS environemnt and Part II deals with using the FlowMax-Q, a QGIS plugin to work with outputs from FlowMax.
+This manual\footnote{Version \textbf{20740d1}} is divided into three parts.
 
-\part*{Editing in QGIS}\label{part-editing-in-qgis}
-\addcontentsline{toc}{part}{Editing in QGIS}
+\begin{itemize}
+\tightlist
+\item
+  Part I deals with handling FlowMax network (nodes and edges) in a QGIS environemnt and
+\item
+  Part II deals with using the FlowMax-Q, a QGIS plugin to work with outputs from FlowMax.
+\item
+  Part III deals with visualization of the outputs from FlowMax. The plugin outputs show a bare minimum schema which is necessary for orientation but may not be enough to interpret or print out for dissemination. This part of the manual explains some detailed symbology using QGIS.
+\end{itemize}
+
+\part{Editing in QGIS}\label{part-editing-in-qgis}
 
 \chapter{Introduction}\label{introduction}
 
@@ -271,8 +280,7 @@ Link file: All links come with predefined attributes. Whenever a new link is add
 
 To edit: \textbf{right click the link file \textgreater{} open attribute table \textgreater{} start edit mode}. Select the required record and modify the values as necessary. After editing, save the edits and close the table. This applies to all scenarios where attribute values must be changed: capacity, speed, travel time, quality of links etc.
 
-\part*{QGIS Plugin}\label{part-qgis-plugin}
-\addcontentsline{toc}{part}{QGIS Plugin}
+\part{QGIS Plugin}\label{part-qgis-plugin}
 
 \chapter{Downloading and Installing}\label{downloading-and-installing}
 
@@ -319,5 +327,7 @@ Installing the plugin is straightforward.
 \section{FlowMax Corridors}\label{flowmax-corridors}
 
 \includegraphics{./images/corridors.png}
+
+\part{Visualization}\label{part-visualization}
 
 \end{document}
